@@ -2,6 +2,12 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import { GlobalContext } from './global/GlobalState'
 import './App.css'
 
+function Backdrop(props: any) {
+  return (
+    <div className='backdrop'></div>
+  )
+}
+
 function Orbiter(props: any) {
 
   const { state: {}, globalDispatch} = useContext(GlobalContext)
@@ -76,23 +82,35 @@ function App() {
 
   return (
     <div className='parent'>
+      <Backdrop />
       <div className='scene'>
         <div className='sphere'></div>
-        {/* <div className='disc-2'></div> */}
+
         <div className='disc'></div>
-        <Orbiter color={'lightblue'} distance={170} size={.2} angle={60} rate={5}/>
-        <Orbiter color={'lightgreen'} distance={320} size={.5} angle={22} rate={20}/>
-        {/* <Orbiter color={'pink'} distance={360} size={1} angle={-35} rate={20}/> */}
-        <Orbiter color={'aqua'} distance={630} size={.9} angle={25} rate={14}/>
-        <Orbiter color={'grey'} distance={840} size={.5} angle={15} rate={37}/>
-        <Orbiter color={'darkgrey'} distance={690} size={.8} angle={5} rate={49}/>
-        <Orbiter color={'blue'} distance={630} size={1.7} angle={-5} rate={19}/>
-        <Orbiter color={'red'} distance={510} size={.6} angle={-45} rate={9}/>
-        <Orbiter color={'orange'} distance={970} size={.5} angle={-35} rate={10}/>
-        <Orbiter color={'yellow'} distance={598} size={.4} angle={-52} rate={70}/>
-        <Orbiter color={'cyan'} distance={529} size={1.3} angle={5} rate={50}/>
-
-
+        {/* MERCURY */}
+        <Orbiter color={'orange'} distance={285} size={.2} angle={7.0} rate={7}/>
+        {/* VENUS */}
+        <Orbiter color={'yellowgreen'} distance={360} size={.45} angle={3.4} rate={12}/>
+        {/* EARTH */}
+        <Orbiter color={'blue'} distance={470} size={.5} angle={0} rate={19}>
+        {/* <div className='parent'>
+        <div className='scene'>
+        <Orbiter color={'white'} distance={200} size={.2} angle={40} rate={19} />
+        </div>
+        </div> */}
+          </Orbiter>
+        {/* MARS */}
+        <Orbiter color={'red'} distance={640} size={.25} angle={1.8} rate={37}/>
+        {/* JUPITER */}
+        <Orbiter color={'darkred'} distance={790} size={2.65} angle={1.3} rate={49}/>
+        {/* SATURN */}
+        <Orbiter color={'yellow'} distance={1030} size={2.4} angle={2.5} rate={90}/>
+        {/* URANUS */}
+        <Orbiter color={'slategrey'} distance={1110} size={2.04} angle={0.8} rate={60}/>
+        {/* NEPTUNE */}
+        <Orbiter color={'lightblue'} distance={1270} size={1.98} angle={1.8} rate={80}/>
+        {/* PLUTO */}
+        <Orbiter color={'brown'} distance={2598} size={.1} angle={17.2} rate={40}/>
 
       </div>
     </div>

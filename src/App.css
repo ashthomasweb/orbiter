@@ -8,8 +8,8 @@ body {
 }
 
 .parent {
-  perspective: 12em;
-  perspective-origin: 50% calc(50% - .5em);
+  perspective: 20em;
+  perspective-origin: 50% calc(50% - 2.5em);
 }
 
 .scene {
@@ -17,11 +17,23 @@ body {
   transform-style: preserve-3d;
 }
 
+.backdrop {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+background-image: url(/src/assets/deep-field-1.png);
+  opacity: .25;
+  background-size: cover;
+  background-position: bottom center;
+}
+
+
 .sphere {
   position: absolute;
   top: 1em;
-  width: 1.4em;
-  height: 1.4em;
+  width: 3em;
+  height: 3em;
   border-radius: 50%;
   background: rgb(255, 208, 88);
   transform: translate(-58%, -50%);
